@@ -3,7 +3,7 @@
 * First of all make sure you have docker and docker compose installed on your computer.
 * Download the .zip file of the project source code and extract it or clone the repository with the following command:
 ```python
-git clone [url]
+git clone https://github.com/Generalns/decanaria.git
 ```
 * Run the following command:
 ```python
