@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=jobs_project
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+  scrapy:
+    build: .
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./:/app
+
+  
+
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+
+ 
+
+volumes:
+  postgres_data:
